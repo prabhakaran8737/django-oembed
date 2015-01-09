@@ -58,3 +58,11 @@ class OEmbedNode(template.Node):
             kwargs['max_width'] = self.width
             kwargs['max_height'] = self.height
         return replace(self.nodelist.render(context), **kwargs)
+
+@register.filter
+def is_video(object, link):
+    iframe = replace(link).find('iframe')
+    if iframe == 1:
+        return True
+    else:
+        return False

@@ -32,6 +32,15 @@ looking at this usage:
     
     {% oembed 320x240 %}
 
+Check if video exists before printing on the DOM
+{% if video_url|is_video:video_url %}
+    {% oembed %}
+        {% for link in links %}{{ link.href }}{% endfor %}
+    {% endoembed %}
+{% else %}
+    Some Default Video/Image
+{% endif %}
+
 Note that this application requires Python 2.3 or later, and Django later than
 0.96. You can obtain Python from http://www.python.org/ and Django from 
 http://www.djangoproject.com/.

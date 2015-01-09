@@ -35,7 +35,7 @@ looking at this usage:
 Check if video exists before printing on the DOM
 {% if video_url|is_video:video_url %}
     {% oembed %}
-        {% for link in links %}{{ link.href }}{% endfor %}
+        Video url
     {% endoembed %}
 {% else %}
     Some Default Video/Image
